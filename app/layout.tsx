@@ -16,10 +16,46 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+
 export const metadata: Metadata = {
-  title: "Car Taxi Service Ujjain",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Best Car & Taxi Service in Ujjain | Mahakaleshwar Darshan",
+    template: "%s | Car Taxi Service Ujjain",
+  },
   description:
-    "Minimal and attractive taxi service website for Ujjain with booking contact form and WhatsApp chat.",
+    "Affordable and reliable car rental and taxi service in Ujjain. Book cabs for local sightseeing, Mahakaleshwar Darshan, Indore airport pickup, and outstation trips.",
+  keywords: [
+    "taxi service in ujjain",
+    "ujjain to indore taxi",
+    "mahakaleshwar darshan taxi",
+    "car rental ujjain",
+    "ujjain local sightseeing cab",
+    "indore airport to ujjain taxi",
+    "outstation taxi ujjain",
+    "ujjain taxi booking",
+  ],
+  authors: [{ name: "Car Taxi Service Ujjain" }],
+  creator: "Car Taxi Service Ujjain",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteUrl,
+    title: "Best Car & Taxi Service in Ujjain | Mahakaleshwar Darshan",
+    description:
+      "Affordable and reliable car rental and taxi service in Ujjain. Book cabs for local sightseeing, Mahakaleshwar Darshan, Indore airport pickup, and outstation trips.",
+    siteName: "Car Taxi Service Ujjain",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Car & Taxi Service in Ujjain | Mahakaleshwar Darshan",
+    description:
+      "Affordable and reliable car rental and taxi service in Ujjain. Book cabs for local sightseeing.",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({
